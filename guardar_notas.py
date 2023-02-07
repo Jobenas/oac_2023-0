@@ -1,18 +1,25 @@
 import random
 import time
 
-if __name__ == '__main__':
-    inicio_total = time.perf_counter()
-    inicio_cpu = time.perf_counter()
+
+def generar_notas(rango: int) -> str:
     codigo_base = 20230000
     contenido = "codigo,pa1,pa2,pa3,pa4,pb1,pb2,pb3,pb4,pb5,e1,e2\n"
-    for i in range(1,41):
+    for i in range(1,rango + 1):
         pa = [random.randint(0,20) for _ in range(4)]
         pb = [random.randint(0,20) for _ in range(5)]
         e1 = random.randint(0,20)
         e2 = random.randint(0,20)
         linea = f"{codigo_base + i},{pa[0]},{pa[1]},{pa[2]},{pa[3]},{pb[0]},{pb[1]},{pb[2]},{pb[3]},{pb[4]},{e1},{e2}\n"
         contenido += linea
+    
+    return contenido
+
+
+if __name__ == '__main__':
+    inicio_total = time.perf_counter()
+    inicio_cpu = time.perf_counter()
+    contenido = generar_notas(40)
     fin_cpu = time.perf_counter()
 
     inicio_io = time.perf_counter()
