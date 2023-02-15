@@ -10,7 +10,7 @@ if __name__ == '__main__':
     print(f"Iniciando servidor en {server_address[0]}:{server_address[1]}")
     sock.bind(server_address)
 
-    sock.listen(5)
+    sock.listen(1)
 
     while True:
         print("Esperando conexión...")
