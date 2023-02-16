@@ -16,7 +16,7 @@ class FakeDatabase:
 
 
 if __name__ == '__main__':
-    workers = 10
+    workers = 100
     db = FakeDatabase()
     print(f"Valor inicial de la base de datos: {db.value}")
 
