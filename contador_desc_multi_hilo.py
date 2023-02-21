@@ -4,7 +4,7 @@ import time
 CUENTA = 50_000_000
 
 
-def cuenta(n):
+def cuenta(n: int) -> None:
     while n > 0:
         n -= 1
 
